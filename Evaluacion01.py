@@ -44,10 +44,12 @@ PreguntaC()
 
 
 def PreguntaD():
-    paises=archivo[lista2].head(10)
-    paises=paises.transpose()
+    archivo.sort_values(by='2019', ascending=False, inplace=True)
+    lista4 = list(map(str, range(2019, 2020)))
+    paises = archivo[lista4].head(10)
+    paises = paises.transpose()
     paises.plot(kind='bar')
-    plt.title('10 PAISES CON MAYOR PBI EN EL 2019')
+    plt.title(' LOS 1O PAISES CON MAYOR PBI EN EL 2019')
     plt.xlabel('PAISES TOP')
     plt.ylabel('BILLONES DE $')
     plt.show()
